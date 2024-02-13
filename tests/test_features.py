@@ -64,16 +64,14 @@ class TestFeatures(TestCase):
 
     # TODO: Add a test of your own below this line
     def test_standard_scaler(self):
-        # Custom test for StandardScaler
+
         data = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
         scaler = StandardScaler()
         scaler.fit(data)
         transformed_data = scaler.transform(data)
         
-        # Test whether the mean of transformed data is close to 0
         assert np.allclose(np.mean(transformed_data, axis=0), 0)
         
-        # Test whether the standard deviation of transformed data is close to 1
         assert np.allclose(np.std(transformed_data, axis=0), 1)
     
 if __name__ == '__main__':
